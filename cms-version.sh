@@ -8,7 +8,7 @@
 terminus auth:login --machine-token=UuXuPBy6NlMovqCIXsvLEbnyYM3Sqp9nIpETZlX9BuXSu
 ​
 # Stash org UUID
-ORG_UUID="1b50534e-d6d6-458a-9095-878e32b52a33"
+ORG_UUID="3fa2e936-0bdf-4392-894f-5fe48a650e74"
 ​
 # Environment - argument 2
 ENV='dev'
@@ -27,7 +27,7 @@ for PANTHEON_SITE_NAME in ${PANTHEON_SITES}; do
         #stash core version
         VERSION="$(terminus remote:wp ${PANTHEON_SITE_NAME}.dev core version 2> /dev/null)"
         echo "${PANTHEON_SITE_NAME} wordpress ${VERSION}"
-				terminus tag:add ${PANTHEON_SITE_NAME} ${ORG_UUID} "WordPress ${VERSION}"
+				#terminus tag:add ${PANTHEON_SITE_NAME} ${ORG_UUID} "WordPress ${VERSION}"
 ​
 #        tag site with name of framework and core version
 #        terminus tag:add ${PANTHEON_SITE_NAME} ${ORG_UUID} "${FRAMEWORK} ${VERSION}"
@@ -38,7 +38,7 @@ for PANTHEON_SITE_NAME in ${PANTHEON_SITES}; do
         #stash core version
         VERSION="$(terminus remote:drush ${PANTHEON_SITE_NAME}.dev -- core:status --field='Drupal version' 2> /dev/null)"
         echo "${PANTHEON_SITE_NAME} drupal ${VERSION}"
-				terminus tag:add ${PANTHEON_SITE_NAME} ${ORG_UUID} "Drupal ${VERSION}"
+				#terminus tag:add ${PANTHEON_SITE_NAME} ${ORG_UUID} "Drupal ${VERSION}"
 ​
 #        tag site with name of framework and core version
 #        terminus tag:add ${PANTHEON_SITE_NAME} ${ORG_UUID} "Drupal ${VERSION}"

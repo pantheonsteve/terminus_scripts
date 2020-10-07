@@ -36,7 +36,8 @@ while read -r PANTHEON_SITE_NAME; do
 	#If there are updates available, apply them
 	if [[ ${STATUS} = "outdated" ]]
 	then
-		terminus upstream:updates:apply ${PANTHEON_SITE_NAME}.${ENV}
+		#terminus upstream:updates:apply ${PANTHEON_SITE_NAME}.${ENV}
+		echo 'Updates available for '${PANTHEON_SITE_NAME}
 	else
 		echo 'no updates available for '${PANTHEON_SITE_NAME}
 	fi
